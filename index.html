@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Cash Machine - Build a Profitable Faceless YouTube Channel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0e1a;
+            color: #e5e7eb;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .eyebrow {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00d9ff;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 .highlight {
+            color: #00d9ff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.5rem;
+            color: #9ca3af;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #141414;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #1f2937;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #6b7280;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #000;
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            margin-top: 30px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.4);
+        }
+        
+        /* Problem Section */
+        .section {
+            padding: 80px 20px;
+        }
+        
+        .section-dark {
+            background: #141414;
+        }
+        
+        .section h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section h2 .highlight {
+            color: #00d9ff;
+        }
+        
+        .section p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+        
+        .problem-card {
+            background: #1f2937;
+            border: 2px solid #374151;
+            border-radius: 15px;
+            padding: 40px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+        
+        .problem-card p {
+            font-size: 1rem;
+            color: #d1d5db;
+            text-align: left;
+        }
+        
+        /* Framework Section */
+        .framework {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%);
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+        
+        .framework-card {
+            background: #141414;
+            border: 3px solid #00d9ff;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .framework-letter {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #00d9ff;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .framework-card h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .framework-card p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+        }
+        
+        /* Timeline Section */
+        .timeline {
+            max-width: 1000px;
+            margin: 60px auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-number {
+            min-width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #000;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: #1f2937;
+            border: 2px solid #374151;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.75rem;
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            text-align: left;
+            margin: 0;
+        }
+        
+        .timeline-content ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .timeline-content li {
+            font-size: 1rem;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+        
+        /* Comparison Table */
+        .comparison {
+            max-width: 1000px;
+            margin: 60px auto;
+            background: #141414;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #374151;
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid #374151;
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-header {
+            background: #1f2937;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        
+        .comparison-cell {
+            padding: 20px;
+            border-right: 1px solid #374151;
+        }
+        
+        .comparison-cell:last-child {
+            border-right: none;
+        }
+        
+        .comparison-cell.win {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            font-weight: 700;
+        }
+        
+        .comparison-cell.lose {
+            color: #ef4444;
+        }
+        
+        /* Bonuses */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+        
+        .bonus-card {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .bonus-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #fbbf24;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .bonus-card h3 {
+            font-size: 1.5rem;
+            color: #fbbf24;
+            margin-bottom: 15px;
+        }
+        
+        .bonus-card p {
+            font-size: 1rem;
+            color: #d1d5db;
+            text-align: left;
+        }
+        
+        /* Pricing */
+        .pricing {
+            max-width: 900px;
+            margin: 60px auto;
+            background: linear-gradient(135deg, #141414 0%, #1f2937 100%);
+            border: 3px solid #fbbf24;
+            border-radius: 25px;
+            padding: 60px;
+            text-align: center;
+        }
+        
+        .price-tag {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+        
+        .price-subtext {
+            font-size: 1.25rem;
+            color: #9ca3af;
+            margin-bottom: 30px;
+        }
+        
+        .price-alt {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-top: 20px;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            max-width: 800px;
+            margin: 60px auto;
+            background: #141414;
+            border: 3px solid #10b981;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .guarantee h3 {
+            font-size: 2.5rem;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+        
+        .guarantee p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            background: #1f2937;
+            border: 2px solid #374151;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.5rem;
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            font-size: 1rem;
+            color: #d1d5db;
+            text-align: left;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subheadline {
+                font-size: 1.125rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .framework-letter {
+                font-size: 3rem;
+            }
+            
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-cell {
+                border-right: none;
+                border-bottom: 1px solid #374151;
+            }
+            
+            .price-tag {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="eyebrow">⚡ THE 30-MINUTE YOUTUBE SYSTEM</div>
+        <h1>Build a <span class="highlight">Profitable YouTube Channel</span> Without Ever Showing Your Face</h1>
+        <p class="subheadline">The AI-Powered System That Takes You From Zero to Your First 1,000 Subscribers and Full Monetization in 90 Days—Creating Videos in 30 Minutes or Less</p>
+        
+        <div class="video-container">
+            <div class="video-placeholder">
+                📹 VSL Video Goes Here (Stage 4)
+            </div>
+        </div>
+        
+        <a href="#pricing" class="cta-button">GET INSTANT ACCESS FOR $297 →</a>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="section section-dark">
+    <div class="container">
+        <h2>You Want YouTube Income, But There's a <span class="highlight">Problem...</span></h2>
+        <p>Most people never start a YouTube channel because they hit one (or all) of these roadblocks:</p>
+        
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>❌ Camera Shy</h3>
+                <p>You hate being on camera. The thought of talking to a lens makes you anxious. You're an introvert, and that's perfectly fine—except every YouTube guru says "just be yourself on camera."</p>
+            </div>
+            
+            <div class="problem-card">
+                <h3>❌ No Time</h3>
+                <p>Traditional YouTube videos take 4-8 hours to create. Between scripting, filming, editing, thumbnails, and optimization, it's a full-time job—and you already have one.</p>
+            </div>
+            
+            <div class="problem-card">
+                <h3>❌ Skill Barrier</h3>
+                <p>You don't know how to edit videos. Premiere Pro and Final Cut look like rocket science. Hiring editors costs $50-200 per video, and you can't afford that when you're just starting.</p>
+            </div>
+            
+            <div class="problem-card">
+                <h3>❌ Equipment Costs</h3>
+                <p>Camera, microphone, lighting, green screen... the "starter kit" alone is $500-2,000. And you're not even sure if YouTube will work for you yet.</p>
+            </div>
+            
+            <div class="problem-card">
+                <h3>❌ No Idea What to Create</h3>
+                <p>You've spent weeks (or months) researching niches, watching "how to find your niche" videos, and you're more confused than when you started. Analysis paralysis is real.</p>
+            </div>
+            
+            <div class="problem-card">
+                <h3>❌ Fear of Failure</h3>
+                <p>What if you spend months creating content and nobody watches? What if your first videos are terrible? What if people judge you? The fear keeps you stuck in tutorial hell, never launching.</p>
+            </div>
+        </div>
+        
+        <p style="font-size:1.5rem; margin-top:40px; color:#fff;">Here's the truth: <strong style="color:#fbbf24;">None of these are real barriers anymore.</strong></p>
+        <p>There's a new way to build a YouTube channel that eliminates EVERY single one of these problems.</p>
+    </div>
+</section>
+
+<!-- Solution Section -->
+<section class="section">
+    <div class="container">
+        <h2>Introducing: <span class="highlight">The A.I.R. Framework™</span></h2>
+        <p>The 3-step system that lets you create high-quality faceless YouTube videos in 30 minutes—even if you've never edited a video in your life.</p>
+        
+        <div class="framework">
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <div class="framework-letter">A</div>
+                    <h3>AUTOMATE</h3>
+                    <p>AI writes your scripts, generates professional voiceovers, and creates visuals. You don't write. You don't talk. You don't film. The AI does it all.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-letter">I</div>
+                    <h3>ITERATE</h3>
+                    <p>Test multiple niches in days, not months. No camera = no commitment. Try a niche, see if it works, pivot if it doesn't. Fail fast, win faster.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-letter">R</div>
+                    <h3>REPLICATE</h3>
+                    <p>Once you find what works, clone the formula across multiple videos—or even multiple channels. Scale from 1 video/week to 10 videos/week without burning out.</p>
+                </div>
+            </div>
+        </div>
+        
+        <p style="font-size:1.5rem; margin-top:60px; text-align:center;">This isn't theory. This is the <strong style="color:#00d9ff;">exact system</strong> faceless channels are using to earn $5,000-$50,000/month on YouTube.</p>
+        <p style="text-align:center; margin-top:20px;">And now, it's yours.</p>
+    </div>
+</section>
+
+<!-- What's Inside Section -->
+<section class="section section-dark">
+    <div class="container">
+        <h2>What's Inside <span class="highlight">YouTube Cash Machine</span></h2>
+        <p>6 modules. 40+ videos. The complete A-Z system for building a profitable faceless YouTube channel from scratch.</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3>Foundation (Week 1)</h3>
+                    <p><strong>Pick the perfect faceless niche</strong> from 20 pre-researched categories (ranked by profitability, competition, and ease).</p>
+                    <ul>
+                        <li>Channel setup & optimization for algorithm</li>
+                        <li>Monetization requirements (what YouTube actually looks for)</li>
+                        <li>How to reverse-engineer successful channels</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3>AI Content Production (Week 2)</h3>
+                    <p><strong>The 30-Minute Video System</strong>—the exact workflow I use to create videos without touching a camera.</p>
+                    <ul>
+                        <li>AI script writing (ChatGPT prompts & templates)</li>
+                        <li>AI voiceover generation (ElevenLabs, Murf, alternatives)</li>
+                        <li>AI visual creation (stock, images, B-roll sources)</li>
+                        <li>Editing automation (templates & one-click tools)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3>Viral Video Formulas (Week 3)</h3>
+                    <p><strong>15 proven video structures</strong> that work for faceless channels (used by channels with 100K-10M subs).</p>
+                    <ul>
+                        <li>Hook formulas that stop the scroll</li>
+                        <li>Thumbnail psychology (what works without a face)</li>
+                        <li>Title templates that get clicks (backed by data)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h3>Growth & Algorithm (Week 4)</h3>
+                    <p><strong>YouTube SEO secrets</strong> for ranking videos and getting recommended.</p>
+                    <ul>
+                        <li>Keywords, tags, descriptions (what actually matters)</li>
+                        <li>Upload schedule & consistency hacks</li>
+                        <li>Analytics: what to track & optimize</li>
+                        <li>Get 1,000 subs in 30-60 days (proven strategy)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <h3>Monetization (Week 5)</h3>
+                    <p><strong>Turn views into dollars</strong> with multiple revenue streams.</p>
+                    <ul>
+                        <li>AdSense approval & maximizing RPM</li>
+                        <li>Affiliate marketing integration (earn while you sleep)</li>
+                        <li>Sponsored content for faceless channels</li>
+                        <li>Digital product upsells (templates, courses)</li>
+                        <li>Revenue stream stacking (get paid 5 ways per video)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">6</div>
+                <div class="timeline-content">
+                    <h3>Scaling & Outsourcing (Week 6)</h3>
+                    <p><strong>Go from 1 video/week to 10+</strong> without burning out.</p>
+                    <ul>
+                        <li>Hiring editors & scriptwriters (Fiverr/Upwork)</li>
+                        <li>Build a content team for $200-500/month</li>
+                        <li>Run multiple channels simultaneously</li>
+                        <li>Automate 90% of the workflow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Section -->
+<section class="section">
+    <div class="container">
+        <h2><span class="highlight">Traditional YouTube</span> vs. The A.I.R. System</h2>
+        
+        <div class="comparison">
+            <div class="comparison-row comparison-header">
+                <div class="comparison-cell"></div>
+                <div class="comparison-cell">Traditional</div>
+                <div class="comparison-cell">A.I.R. System</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Time per video</div>
+                <div class="comparison-cell lose">4-8 hours</div>
+                <div class="comparison-cell win">30 minutes</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Equipment needed</div>
+                <div class="comparison-cell lose">$500-2,000+</div>
+                <div class="comparison-cell win">$0 (just AI tools)</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Camera required?</div>
+                <div class="comparison-cell lose">Yes</div>
+                <div class="comparison-cell win">Never</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Editing skills needed</div>
+                <div class="comparison-cell lose">Yes (months to learn)</div>
+                <div class="comparison-cell win">No (templates provided)</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Niche testing speed</div>
+                <div class="comparison-cell lose">Weeks-months</div>
+                <div class="comparison-cell win">Days</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Scaling potential</div>
+                <div class="comparison-cell lose">Limited (you're the bottleneck)</div>
+                <div class="comparison-cell win">Unlimited (AI + outsourcing)</div>
+            </div>
+            
+            <div class="comparison-row">
+                <div class="comparison-cell">Privacy</div>
+                <div class="comparison-cell lose">Face + voice exposed</div>
+                <div class="comparison-cell win">100% anonymous</div>
+            </div>
+        </div>
+        
+        <p style="text-align:center; margin-top:40px; font-size:1.25rem;">There's no comparison. The A.I.R. System is faster, cheaper, and more scalable.</p>
+    </div>
+</section>
+
+<!-- Bonuses Section -->
+<section class="section section-dark">
+    <div class="container">
+        <h2>🎁 Plus, You Get These <span class="highlight">6 Bonuses</span> (Worth $1,394)</h2>
+        
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <div class="bonus-badge">BONUS #1</div>
+                <h3>50 Done-For-You Script Templates</h3>
+                <p>Copy-paste scripts for the 10 most profitable faceless niches. Fill in the blanks, generate voiceover, done. ($197 value)</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-badge">BONUS #2</div>
+                <h3>Viral Thumbnail Template Pack</h3>
+                <p>100+ Canva templates designed for faceless channels. Just swap text, export, upload. ($97 value)</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-badge">BONUS #3</div>
+                <h3>AI Prompt Library (100+ Prompts)</h3>
+                <p>Every ChatGPT, Midjourney, and DALL-E prompt you'll ever need for YouTube content creation. ($147 value)</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-badge">BONUS #4</div>
+                <h3>Niche Research Spreadsheet</h3>
+                <p>20 faceless niches ranked by profitability, competition, and difficulty. Includes sample channels + analytics. ($97 value)</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-badge">BONUS #5</div>
+                <h3>Private Community Access</h3>
+                <p>Join our Discord/Skool community of faceless YouTubers. Share wins, get feedback, network with creators. ($497 value)</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-badge">BONUS #6</div>
+                <h3>Monthly Q&A Calls (First 3 Months)</h3>
+                <p>Live coaching calls where I answer your questions, review your channel, and help you grow faster. ($359 value)</p>
+            </div>
+        </div>
+        
+        <p style="text-align:center; margin-top:40px; font-size:1.25rem; color:#fbbf24;"><strong>Total Bonus Value: $1,394</strong></p>
+        <p style="text-align:center; margin-top:10px;">But you don't pay anywhere near that...</p>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="section" id="pricing">
+    <div class="container">
+        <h2>Here's What It Costs to <span class="highlight">Get Started Today</span></h2>
+        
+        <div class="pricing">
+            <div class="price-tag">$297</div>
+            <p class="price-subtext">One-time payment. Lifetime access. No recurring fees.</p>
+            
+            <a href="#pricing" class="cta-button">YES! GIVE ME ACCESS NOW →</a>
+            
+            <p class="price-alt">Or 3 payments of $99 (payment plan available at checkout)</p>
+        </div>
+        
+        <p style="text-align:center; margin-top:40px; font-size:1.125rem; max-width:700px; margin-left:auto; margin-right:auto;">That's <strong style="color:#00d9ff;">less than the cost of a camera</strong> you'd need for traditional YouTube. And unlike a camera, this system works 24/7, never gets outdated, and scales infinitely.</p>
+        
+        <p style="text-align:center; margin-top:20px; font-size:1.125rem;">Think about it: Most people spend more on coffee in 2 months. This investment pays for itself with your first few monetized videos.</p>
+    </div>
+</section>
+
+<!-- Guarantee Section -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="guarantee">
+            <h3>??? 60-Day Money-Back Guarantee</h3>
+            <p>Try YouTube Cash Machine for 60 days. If you don't get your first 100 subscribers, or if you're not satisfied for ANY reason, email us and we'll refund every penny. No questions asked.</p>
+            <p style="margin-top:20px; font-size:1rem; color:#9ca3af;">You're either thrilled with the system, or you pay nothing. That's how confident we are.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <div class="container">
+        <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+        
+        <div class="faq-item">
+            <h3>Do I need to buy expensive AI tools?</h3>
+            <p>No. There are free versions of every AI tool in this system (ChatGPT, ElevenLabs, Canva, etc.). I'll show you exactly how to use them. If you want premium versions later for faster workflows, I include discount codes.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What if I pick the wrong niche?</h3>
+            <p>That's the beauty of faceless channels�you can pivot without consequence. No face means no brand commitment. Test a niche for 2 weeks, and if it doesn't work, switch. I'll show you how to know within 5 videos if a niche is viable.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Is this still possible in 2026?</h3>
+            <p>Absolutely. Faceless channels are MORE popular than ever. AI tools have made the barrier to entry lower, but 99% of people still don't know how to use them properly. This course gives you the unfair advantage.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How long until I get monetized?</h3>
+            <p>YouTube requires 1,000 subscribers + 4,000 watch hours. With consistent uploads (3-5 videos/week using the 30-minute system), most students hit this in 60-90 days. Some faster, some slower�it depends on your niche and consistency.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Can I do this with a full-time job?</h3>
+            <p>Yes! That's the entire point. The 30-minute system was designed for people with busy lives. Create 1 video per day during your lunch break, or batch 7 videos on Sunday afternoon. You control the schedule.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What niches work best for faceless channels?</h3>
+            <p>The course includes 20 proven niches (ranked by profitability and competition). Top performers: finance/investing, self-improvement, tech reviews, true crime, history, luxury/lifestyle, AI/automation, and list-based content.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Do I need editing skills?</h3>
+            <p>No. I provide templates and step-by-step tutorials for free tools like CapCut. If you can drag-and-drop files, you can edit videos with this system. Most students create their first video within 24 hours of starting the course.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What if YouTube changes their policies?</h3>
+            <p>The course is updated whenever YouTube makes policy changes. You get lifetime access to all updates. Plus, the A.I.R. Framework teaches principles (not hacks), so you're protected against algorithm changes.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Is this a get-rich-quick scheme?</h3>
+            <p>No. This is a business system. You'll need to work consistently for 90 days to see results. But unlike traditional businesses that take 6-12 months and $10K+ to start, this can be profitable in 90 days with a $297 investment.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How is this different from free YouTube tutorials?</h3>
+            <p>Free content gives you pieces. This gives you the SYSTEM. Every step is documented, in order, with templates and examples. No more "figure it out yourself." Plus, you get community access and live Q&A calls�something free YouTube will never provide.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Your Faceless YouTube Channel is <span class="highlight">90 Days Away</span></h2>
+        <p>Imagine waking up 90 days from now and seeing notifications like this:</p>
+        <p style="font-size:1.5rem; color:#10b981; margin-top:30px;">"You've reached 1,000 subscribers!"</p>
+        <p style="font-size:1.5rem; color:#10b981; margin-top:10px;">"Congratulations! Your channel is now eligible for monetization."</p>
+        <p style="font-size:1.5rem; color:#10b981; margin-top:10px; margin-bottom:40px;">"You earned $247.32 last month from AdSense."</p>
+        
+        <p style="font-size:1.125rem; margin-bottom:20px;">It's not a fantasy. It's what happens when you follow a proven system.</p>
+        <p style="font-size:1.125rem; margin-bottom:40px;">You have two choices:</p>
+        
+        <div style="max-width:600px; margin:0 auto 40px; text-align:left; background:#141414; padding:40px; border-radius:15px;">
+            <p style="margin-bottom:20px;"><strong style="color:#ef4444;">Option 1:</strong> Keep watching free YouTube tutorials, stay stuck in analysis paralysis, and still have zero subscribers 6 months from now.</p>
+            <p><strong style="color:#10b981;">Option 2:</strong> Invest $297 today, follow the A.I.R. Framework, and be monetized in 90 days.</p>
+        </div>
+        
+        <p style="font-size:1.125rem; margin-bottom:40px;">Which future do you choose?</p>
+        
+        <a href="#pricing" class="cta-button" style="font-size:1.5rem; padding:25px 60px;">GET YOUTUBE CASH MACHINE NOW ?</a>
+        
+        <p style="font-size:0.875rem; color:#6b7280; margin-top:30px;">One-time payment. Lifetime access. 60-day money-back guarantee.</p>
+    </div>
+</section>
+
+</body>
+</html>
